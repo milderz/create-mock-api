@@ -1,0 +1,83 @@
+---
+
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	*,
+	*::before,
+	*::after {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	:root {
+		--white: #ffffff;
+		--accent: #d6fb41;
+		--white-text: #f0f0f0;
+		--black-text: #1d1d1d;
+		--accent-opacity: hsl(72, 72%, 56%, 28%);
+		--accent-hover: #f5ffcb;
+		--black-bg: #161616;
+		--gray-bg: #1d1d1d;
+	}
+	html {
+		font-size: 62.5%;
+	}
+
+	body {
+		font-family: "Inter", serif;
+		font-optical-sizing: auto;
+		font-weight: 300;
+		font-style: normal;
+		color: var(--white-text);
+		background-color: #0E0E0E;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		color: var(--white);
+	}
+
+	li {
+		list-style: none;
+	}
+
+	a {
+		text-decoration: none;
+		color: #1d1d1d;
+	}
+	p {
+		font-size: 1.8rem;
+		font-weight: 400;
+		color: #C2C2C2;
+	}
+
+	
+</style>

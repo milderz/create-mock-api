@@ -1,0 +1,13 @@
+---
+import ReactComponent from '../components/ReactComponent.jsx';
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+	<Header></Header>
+	<h1>Create</h1>
+	<ReactComponent client:load />
+</Layout>
+		
+
