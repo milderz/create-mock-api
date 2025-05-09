@@ -4,28 +4,41 @@
     <div class="container">
         <h2 class="footer-title">MockAPI Playground</h2>
         <p class="footer-description">
-            A simple yet powerful tool for creating and visualizing JSON objects for your mock APIs. Perfect for frontend developers who need to work with APIs.
+        Made with ❤️ by <a class="github-link" href="https://www.github.com/milderz" target="_blank" rel="noopener noreferrer">@milderz</a>
         </p>
     </div>
 </footer>
 
 <style>
     .footer {
-        background-color: #f8f9fa;
-        padding: 2rem 1rem;
+        height: 18rem;
+        background-color: var(--dark-bg);
         text-align: center;
-        border-top: 1px solid #e9ecef;
+        border-top: 1px solid #262626;
+        
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.6rem;
+        height: 100%;
     }
 
     .footer-title {
-        font-size: 1.5rem;
+        font-size: 2.4rem;
         font-weight: bold;
-        margin-bottom: 0.5rem;
-        color: #555;
+        color: var(--white-text);
     }
 
     .footer-description {
-        font-size: 1rem;
-        color: #6c757d;
+        font-size: 1.6rem;
+        color: var(--white-text);
+    }
+    .github-link {
+        color: var(--accent);
+        text-decoration: none;
     }
 </style>
