@@ -36,13 +36,12 @@ const { title } = Astro.props;
 
 	:root {
 		--white: #ffffff;
-		--accent: #d6fb41;
-		--white-text: #f0f0f0;
-		--black-text: #1d1d1d;
-		--accent-opacity: hsl(72, 72%, 56%, 28%);
-		--accent-hover: #f5ffcb;
-		--black-bg: #161616;
-		--gray-bg: #1d1d1d;
+		--accent: #9499ff;
+		--white-text: #dfdfd6;
+		--gray-text: #98989f;
+		--accent-opacity: hsla(237, 100%, 79%, 0.5);
+		--dark-bg: #1B1B1F;
+		--light-bg: #202127;
 	}
 	html {
 		font-size: 62.5%;
@@ -54,7 +53,7 @@ const { title } = Astro.props;
 		font-weight: 300;
 		font-style: normal;
 		color: var(--white-text);
-		background-color: #0E0E0E;
+		background-color: var(--dark-bg);
 	}
 
 	h1,
