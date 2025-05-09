@@ -1,11 +1,12 @@
 ---
+import Button from './Button.astro';
 ---
 <header class="header">
     <div class="logo">
-        <h1>FakeAPI Creator</h1>
+        <h1>MockAPI Playground</h1>
     </div>
     <nav class="nav">
-        <button class="sign-in-button">Sign In</button>
+        <Button text="Sign in" />
     </nav>
 </header>
 
@@ -15,14 +16,14 @@
         justify-content: space-between;
         align-items: center;
         padding: 1rem;
-        background-color: #f8f9fa;
-        border-bottom: 1px solid #ddd;
+        background-color: var(--dark-bg);
+        border-bottom: 1px solid #262626;
     }
 
     .logo h1 {
         margin: 0;
-        font-size: 1.5rem;
-        color: #333;
+        font-size: 2rem;
+        color: var(--white-text);
     }
 
     .nav .sign-in-button {
