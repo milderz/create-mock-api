@@ -1,0 +1,24 @@
+---
+
+const { backgroundColor } = Astro.props;
+
+
+const backgroundColorClass = backgroundColor === 'dark' ? "background-color: #0E0E0E" : "background-color: #1D1D1D"
+---
+
+<div class="section-container" style={backgroundColorClass}>
+    <div class="container">
+
+        <slot />
+    </div>
+</div>
+<style>
+	.container {
+      
+        width: 90%;
+        margin: auto;
+        max-width: 110rem;
+       
+        
+    }
+</style>
