@@ -8,6 +8,10 @@
     transition: background-color 0.3s;
 }
 
+.primary-button:hover {
+    background-color: var(--accent-opacity);
+}
+
 .secondary-button {
     padding: 10px 20px;
     border: 1px solid #262626;
@@ -17,4 +21,7 @@
     color: #ffffff;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+.secondary-button:hover {
+    background-color: #303030;
 }
