@@ -1,0 +1,20 @@
+.primary-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--accent);
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.secondary-button {
+    padding: 10px 20px;
+    border: 1px solid #262626;
+    border-radius: 4px;
+    background-color: transparent;
+
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
