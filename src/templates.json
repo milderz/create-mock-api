@@ -1,0 +1,124 @@
+[
+    {
+        "totalResults": 5,
+        "id": 1,
+        "templateName": "Product List",
+        "templateDescription": "A list of products with details.",
+        "totalPages": 1,
+        "currentPage": 1,
+        "resultsPerPage": 5,
+        "products": [
+            {
+                "id": 1,
+                "name": "Wireless Mouse",
+                "description": "A sleek and ergonomic wireless mouse.",
+                "category": "Electronics",
+                "price": 25.99,
+                "stock": 120,
+                "rating": 4.5,
+                "image": "https://img.freepik.com/free-vector/realistic-round-box-mockup_52683-87713.jpg"
+            },
+            {
+                "id": 2,
+                "name": "Bluetooth Headphones",
+                "description": "Noise-cancelling over-ear headphones.",
+                "category": "Electronics",
+                "price": 89.99,
+                "stock": 60,
+                "rating": 4.7,
+                "image": "https://img.freepik.com/free-vector/realistic-round-box-mockup_52683-87713.jpg"
+            },
+            {
+                "id": 3,
+                "name": "Coffee Mug",
+                "description": "Ceramic mug with a 12oz capacity.",
+                "category": "Kitchenware",
+                "price": 12.49,
+                "stock": 200,
+                "rating": 4.2,
+                "image": "https://img.freepik.com/free-vector/realistic-round-box-mockup_52683-87713.jpg"
+            },
+            {
+                "id": 4,
+                "name": "Notebook",
+                "description": "A5 size notebook with 100 pages.",
+                "category": "Stationery",
+                "price": 5.99,
+                "stock": 300,
+                "rating": 4.0,
+                "image": "https://img.freepik.com/free-vector/realistic-round-box-mockup_52683-87713.jpg"
+            },
+            {
+                "id": 5,
+                "name": "Desk Lamp",
+                "description": "Adjustable LED desk lamp with touch controls.",
+                "category": "Furniture",
+                "price": 45.00,
+                "stock": 80,
+                "rating": 4.6,
+                "image": "https://img.freepik.com/free-vector/realistic-round-box-mockup_52683-87713.jpg"
+            }
+        ]
+    },
+    {
+        "totalResults": 5,
+        "id": 2,
+        "templateName": "Employees List",
+        "templateDescription": "A list of employees with details.",
+        "totalPages": 1,
+        "currentPage": 1,
+        "resultsPerPage": 5,
+        "employees": [
+            {
+                "id": 101,
+                "name": "John Doe",
+                "position": "Software Engineer",
+                "department": "IT",
+                "salary": 75000,
+                "experience": 5,
+                "rating": 4.7,
+                "profileImage": "https://cdn-icons-png.freepik.com/512/3607/3607444.png"
+            },
+            {
+                "id": 102,
+                "name": "Jane Smith",
+                "position": "Product Manager",
+                "department": "Product",
+                "salary": 85000,
+                "experience": 7,
+                "rating": 4.8,
+                "profileImage": "https://cdn-icons-png.freepik.com/512/3607/3607444.png"
+            },
+            {
+                "id": 103,
+                "name": "Alice Johnson",
+                "position": "UX Designer",
+                "department": "Design",
+                "salary": 68000,
+                "experience": 4,
+                "rating": 4.5,
+                "profileImage": "https://cdn-icons-png.freepik.com/512/3607/3607444.png"
+            },
+            {
+                "id": 104,
+                "name": "Bob Brown",
+                "position": "Data Analyst",
+                "department": "Analytics",
+                "salary": 72000,
+                "experience": 6,
+                "rating": 4.6,
+                "profileImage": "https://cdn-icons-png.freepik.com/512/3607/3607444.png"
+            },
+            {
+                "id": 105,
+                "name": "Emma Wilson",
+                "position": "HR Specialist",
+                "department": "Human Resources",
+                "salary": 65000,
+                "experience": 3,
+                "rating": 4.4,
+                "profileImage": "https://cdn-icons-png.freepik.com/512/3607/3607444.png"
+            }
+        ]
+    }
+]
