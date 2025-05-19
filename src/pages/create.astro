@@ -1,13 +1,14 @@
 ---
-import App from '../components/App.jsx';
-import Header from '../components/Header.astro';
-import Layout from '../layouts/Layout.astro';
+import App from "../components/App.jsx";
+
+import Layout from "../layouts/Layout.astro";
+const url = new URL(Astro.request.url);
+const currentPath = url.pathname;
+
+
 ---
 
 <Layout>
-	<Header></Header>
 	
-	<App client:only="react" />
+	<App client:only="react" currentPath={currentPath}/>
 </Layout>
-		
-
