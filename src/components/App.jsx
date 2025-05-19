@@ -15,6 +15,7 @@ export default function App( { currentPath} ) {
   const [selectedTemplate, setSelectedTemplate] = useState(templatesJSONFile[0]);
   const [editorContent, setEditorContent] = useState('JSON content here');
   const [modalOpen, setModalOpen] = useState(true);
+  const [aiContent, setAiContent] = useState('');
 
   useEffect(() => {
     if (template) {
@@ -47,7 +48,23 @@ export default function App( { currentPath} ) {
     setModalOpen(!modalOpen);
   }
 
+  const handleAiContentChange = (value) => {
+    setAiContent(value);
+    console.log(value);
+  }
  
+  const generateMockAPI = async (description) => {
+    const response = await fetch('https://chat-gpt-mock-api-generator.onrender.com/generate-mock-api', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ description })
+    });
+    return await response.json();
+  }
+  
+
 
 
 
@@ -58,7 +75,10 @@ export default function App( { currentPath} ) {
       handleTemplateChange={handleTemplateChange} 
       templates={templates} selectedTemplate={selectedTemplate} 
       handleTemplateApply={handleTemplateApply} 
-      modalOpen={modalOpen} />
+      modalOpen={modalOpen}
+      handleAiContentChange={handleAiContentChange}
+      aiContent={aiContent}
+      generateMockAPI={generateMockAPI} />
       <PanelGroup direction="horizontal" style={{ height: '550px' }}>
         <Panel defaultSize={50} minSize={20}>
           <Editor
