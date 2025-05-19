@@ -26,3 +26,8 @@
 .nav .sign-in-button:hover {
     background-color: #0056b3;
 }
+
+.nav {
+    display: flex;
+    gap: 1rem;
+}
