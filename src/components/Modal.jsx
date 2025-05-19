@@ -9,10 +9,13 @@ const Modal = ({
   modalOpen,
   handleAiContentChange,
     aiContent,
-    generateMockAPI
+    generateMockAPI,
+    selectedTab,
+  setSelectedTab,
+  setAiTemplate
   
 }) => {
-  const [selectedTab, setSelectedTab] = useState("template");
+  
 
   const handleTabSelect = (tab) => {
     setSelectedTab(tab);
@@ -101,7 +104,8 @@ const Modal = ({
           onClick={async () => {
             try {
               const apiSpec = await generateMockAPI(aiContent);
-              console.log(apiSpec); 
+              
+              handleTemplateApply(apiSpec);
             } catch (error) {
               console.error(error);
             }

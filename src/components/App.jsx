@@ -16,6 +16,8 @@ export default function App( { currentPath} ) {
   const [editorContent, setEditorContent] = useState('JSON content here');
   const [modalOpen, setModalOpen] = useState(true);
   const [aiContent, setAiContent] = useState('');
+  const [aiTemplate, setAiTemplate] = useState(null);
+  const [selectedTab, setSelectedTab] = useState("template");
 
   useEffect(() => {
     if (template) {
@@ -39,8 +41,14 @@ export default function App( { currentPath} ) {
     setSelectedTemplate(selected);
   }
 
-  const handleTemplateApply = () => {
-    setTemplate(selectedTemplate);
+  const handleTemplateApply = (aiData) => {
+    if(selectedTab === "template"){
+      console.log('executing template');
+      setTemplate(selectedTemplate);
+    } else if(selectedTab === "ai"){
+      console.log('executing ai template');
+      setTemplate(aiData);
+    }
     handleModalClose();
   }
 
@@ -78,7 +86,10 @@ export default function App( { currentPath} ) {
       modalOpen={modalOpen}
       handleAiContentChange={handleAiContentChange}
       aiContent={aiContent}
-      generateMockAPI={generateMockAPI} />
+      generateMockAPI={generateMockAPI}
+      selectedTab={selectedTab}
+      setSelectedTab={setSelectedTab}
+      setAiTemplate={setAiTemplate} />
       <PanelGroup direction="horizontal" style={{ height: '550px' }}>
         <Panel defaultSize={50} minSize={20}>
           <Editor

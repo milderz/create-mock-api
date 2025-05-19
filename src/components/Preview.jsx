@@ -3,6 +3,8 @@ import '../components/styles/Preview.css';
 
 
 export default function Preview({ template }) {
+
+  console.log(template);
  
     if(!template){
       return <div className="preview-container"><p>No template selected</p></div>
@@ -43,6 +45,29 @@ export default function Preview({ template }) {
             </header>
             <p className='card-product-description'>{product.description}</p>
             <button className="btn btn-primary">Edit profile</button>
+            <footer className="card-footer">
+            
+  
+            </footer>
+          </article>
+        ))}
+      </div>)
+    }
+
+    if(template.id === 'ai-generated'){
+      return(  <div className="preview-container" >
+      
+        
+        {template.results.map(product => (
+          <article key={product.id} className="card">
+            <img height="100px" width="100px" src={product.profileImage} alt={product.name} className="product-image" />
+            <header className="card-header">
+            
+            <h3 className='card-product-name'>{product.name}</h3>
+           
+            </header>
+            <p className='card-product-description'>{product.description}</p>
+            
             <footer className="card-footer">
             
   
