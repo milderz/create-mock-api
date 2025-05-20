@@ -60,7 +60,7 @@ export default function Preview({ template }) {
         
         {template.results.map(product => (
           <article key={product.id} className="card">
-            <img height="100px" width="100px" src={product.profileImage} alt={product.name} className="product-image" />
+            <img height="100px" width="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png?20200912122019" alt={product.name} className="product-image" />
             <header className="card-header">
             
             <h3 className='card-product-name'>{product.name}</h3>
