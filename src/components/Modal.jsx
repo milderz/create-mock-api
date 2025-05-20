@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./styles/Modal.css";
+import Loader from './Loader';
 
 const Modal = ({
   handleTemplateChange,
@@ -111,7 +112,7 @@ const Modal = ({
             }
           }}
           disabled={!aiContent}
-        >
+        ><img height="20px" width="20px" className="loader" src="/dots-loader.gif" alt="Loading..." />
           Apply Template
         </button>
         )}
