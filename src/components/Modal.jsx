@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./styles/Modal.css";
-import Loader from './Loader';
+
 
 const Modal = ({
   handleTemplateChange,
@@ -16,6 +16,7 @@ const Modal = ({
   setAiTemplate
   
 }) => {
+  const [loading, setLoading] = useState(false);
   
 
   const handleTabSelect = (tab) => {
@@ -27,7 +28,7 @@ const Modal = ({
       className="modal-overlay"
       style={modalOpen ? { display: "flex" } : { display: "none" }}
     >
-      <div className="modal">
+      <div className="modal" >
         <div className="modal-body">
           <header className="modal-header">
             <h2>Choose API Template</h2>
@@ -104,16 +105,20 @@ const Modal = ({
           className="apply-button"
           onClick={async () => {
             try {
+              setLoading(true);
               const apiSpec = await generateMockAPI(aiContent);
               
               handleTemplateApply(apiSpec);
+              setLoading(false);
+             
             } catch (error) {
               console.error(error);
+              setLoading(false);
             }
           }}
           disabled={!aiContent}
-        ><img height="20px" width="20px" className="loader" src="/dots-loader.gif" alt="Loading..." />
-          Apply Template
+        >{loading && (<img height="20px" width="20px" className="loader" src="/dots-loader.gif" alt="Loading..." />)}
+         {loading ? "Generating..." : "Apply AI Template"} 
         </button>
         )}
         
