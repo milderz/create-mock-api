@@ -8,13 +8,21 @@
     transition: background-color 0.3s;
 }
 
+.primary-button svg {
+    padding-right: 0.8rem;
+}
+.secondary-button svg {
+    padding-right: 0.8rem;
+}
+
 .primary-button:hover {
     background-color: var(--accent-opacity);
 }
 
 .secondary-button {
+    
     padding: 10px 20px;
-    border: 1px solid #262626;
+    border: 1px solid #4a4949;
     border-radius: 4px;
     background-color: transparent;
 
