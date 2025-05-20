@@ -1,0 +1,67 @@
+---
+import Header from '../components/Header';
+import Layout from '../layouts/Layout.astro';
+
+const apis = [
+    { id: 1, name: 'API 1', description: 'Description for API 1' },
+    { id: 2, name: 'API 2', description: 'Description for API 2' },
+    { id: 3, name: 'API 3', description: 'Description for API 3' },
+];
+---
+
+<Layout>
+    <!-- <Header /> -->
+    <!-- <section class="myapis-page">
+        <h1 class="page-title">My APIs</h1>
+        <div class="api-list">
+            {apis.map(api => (
+                <div class="api-card" key={api.id}>
+                    <h2 class="api-name">{api.name}</h2>
+                    <p class="api-description">{api.description}</p>
+                    <button class="api-url-button" onClick={() => alert(`Endpoint URL for ${api.name}`)}>
+                        Get API URL
+                    </button>
+                    <button class="delete-api-button" onClick={() => alert(`Delete ${api.name}`)}>
+                        Delete API
+                    </button>
+                </div>
+            ))}
+        </div>
+    </section> -->
+</Layout>
+
+<style>
+    .myapis-page {
+        padding: 2rem;
+    }
+
+    .page-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .api-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .api-card {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 1rem;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .api-name {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .api-description {
+        font-size: 1rem;
+        color: #555;
+    }
+</style>
