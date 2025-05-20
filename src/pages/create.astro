@@ -2,13 +2,12 @@
 import App from "../components/App.jsx";
 
 import Layout from "../layouts/Layout.astro";
-const url = new URL(Astro.request.url);
-const currentPath = url.pathname;
+
 
 
 ---
 
 <Layout>
 	
-	<App client:only="react" currentPath={currentPath}/>
+	<App client:only="react" />
 </Layout>
