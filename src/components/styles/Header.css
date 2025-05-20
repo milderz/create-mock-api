@@ -5,12 +5,14 @@
     padding: 1rem;
     background-color: var(--dark-bg);
     border-bottom: 1px solid #262626;
+    min-height: 4.85rem;
 }
 
-.logo h1 {
+.logo-title {
     margin: 0;
     font-size: 2rem;
     color: var(--white-text);
+    font-weight: 600;
 }
 
 
@@ -18,3 +20,15 @@
     display: flex;
     gap: 1rem;
 }
+
+.cl-rootBox button {
+    padding: 0.5rem 1rem;
+    
+    
+}
+
+.cl-rootBox button:hover {
+    
+}
+
+
