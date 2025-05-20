@@ -118,7 +118,7 @@ const Modal = ({
           }}
           disabled={!aiContent}
         >{loading && (<img height="20px" width="20px" className="loader" src="/dots-loader.gif" alt="Loading..." />)}
-         {loading ? "Generating..." : "Apply AI Template"} 
+         {loading ? "Generating" : "Apply AI Template"} 
         </button>
         )}
         
