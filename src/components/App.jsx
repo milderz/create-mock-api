@@ -30,7 +30,7 @@ export default function App( ) {
     try {
       const updatedProducts = JSON.parse(value);
       setProductsData(updatedProducts);
-      console.log(productsData)
+      
     } catch (error) {
       console.error("Invalid JSON:", error);
     }
@@ -44,10 +44,10 @@ export default function App( ) {
 
   const handleTemplateApply = (aiData) => {
     if(selectedTab === "template"){
-      console.log('executing template');
+      
       setTemplate(selectedTemplate);
     } else if(selectedTab === "ai"){
-      console.log('executing ai template');
+     
       setTemplate(aiData);
     }
     handleModalClose();
@@ -59,7 +59,6 @@ export default function App( ) {
 
   const handleAiContentChange = (value) => {
     setAiContent(value);
-    console.log(value);
   }
  
   const generateMockAPI = async (description) => {
