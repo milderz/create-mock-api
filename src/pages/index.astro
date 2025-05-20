@@ -10,7 +10,7 @@ import Container from "../components/Container.astro";
 <Layout>
 	<main>
 		
-			<Header  />
+			<Header currentPath={window.location.pathname} handleModalClose={() => console.log('Modal closed')} />
 		
 
 		<Hero />
