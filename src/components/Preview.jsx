@@ -4,7 +4,7 @@ import '../components/styles/Preview.css';
 
 export default function Preview({ template }) {
 
-  console.log(template);
+
  
     if(!template){
       return <div className="preview-container"><p>No template selected</p></div>
