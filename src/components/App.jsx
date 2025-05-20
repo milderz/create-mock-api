@@ -10,7 +10,7 @@ import Header from "../components/Header";
 
 
 
-export default function App( { currentPath} ) {
+export default function App( ) {
   const [templates, setTemplates] = useState(templatesJSONFile);
   const [template, setTemplate] = useState(null);
   const [selectedTemplate, setSelectedTemplate] = useState(templatesJSONFile[0]);
@@ -80,7 +80,7 @@ export default function App( { currentPath} ) {
   return (
     <>
     
-    <Header  currentPath={currentPath} handleModalClose={handleModalClose} />
+    <Header handleModalClose={handleModalClose} currentPath="/create"/>
       <Modal 
       handleTemplateChange={handleTemplateChange} 
       templates={templates} selectedTemplate={selectedTemplate} 
