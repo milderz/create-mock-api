@@ -3,9 +3,10 @@ import Button from './Button.astro';
 ---
 <section class="hero">
     <div class="container">
-        <h1 class="hero-title">JSON Playground for Mock APIs</h1>
+        <h2 class="hero-title">Generate mock APIs instantly.</h2>
+        <h2 class="hero-title">Practice like a pro.</h2>
         <p class="hero-description">
-            Create, visualize, and test your API responses in real-time. Design better APIs with an intuitive JSON editor that shows you exactly what your data will look like.
+            With API SANDBOX, you can create custom mock endpoints with realistic data to practice fetch, test your UI, and sharpen your frontend skills — no backend, no setup.
         </p>
         <div class="hero-buttons">
          <Button text="Go to sandbox" href="/create"/>
@@ -20,21 +21,22 @@ import Button from './Button.astro';
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
         background-color: var(--dark-bg);
         color: var(--white-text);
         height: 65rem;
+        
     }
 
     .hero-title {
         font-size: 7.2rem;
         margin-bottom: 1rem;
+        line-height: 7.6rem;
     }
 
     .hero-description {
         font-size: 2rem;
-        margin-bottom: 2rem;
-        width: 60ch;
+        margin: 3rem 0;
+        width: 50ch;
     }
 
 
