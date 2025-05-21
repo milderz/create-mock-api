@@ -9,42 +9,32 @@
             Everything you need to build and test your API responses with confidence
         </p>
         <div class="cards">
+            
             <div class="card">
-                <h3 class="card-title">Real-time Preview</h3>
+                <h3 class="card-title">🧠 AI-Powered Mock API Generator</h3>
                 <p class="card-description">
-                    See your JSON objects in real-time as you type, with instant validation and error highlighting to catch issues early.
+                    Just describe the data you need, and let the AI generate a complete mock API. From user profiles to product listings, it’s ready to go.
                 </p>
             </div>
             <div class="card">
-                <h3 class="card-title">Ready-made Templates</h3>
+                <h3 class="card-title">💾 Save & Manage Your APIs</h3>
                 <p class="card-description">
-                    Start quickly with pre-built JSON templates for common API responses like users, products, pagination, and more.
+                    Access all your created endpoints in the My APIs section. Edit, reuse, or organize them whenever you want.
                 </p>
             </div>
             <div class="card">
-                <h3 class="card-title">Code Generation</h3>
+                <h3 class="card-title">🔗 Real Endpoints for Frontend Testing</h3>
                 <p class="card-description">
-                    Generate API client code for your favorite language or framework with one click, supporting TypeScript, Python, Ruby, and more.
+                    Each mock API behaves like a real one and returns JSON responses — perfect for using with fetch, axios, or your favorite data library.
                 </p>
             </div>
             <div class="card">
-                <h3 class="card-title">Schema Validation</h3>
+                <h3 class="card-title">🎯 Built for Frontend Developers</h3>
                 <p class="card-description">
-                    Define JSON schemas and validate your responses against them to ensure consistency and correctness in your API design.
+                    Designed to simulate real-world use cases like loading states, error handling, and dynamic data — without writing a single line of backend code.
                 </p>
             </div>
-            <div class="card">
-                <h3 class="card-title">API Mocking</h3>
-                <p class="card-description">
-                    Create temporary endpoints that return your mock data, perfect for frontend development before the backend is ready.
-                </p>
-            </div>
-            <div class="card">
-                <h3 class="card-title">Version History</h3>
-                <p class="card-description">
-                    Track changes to your API design with automatic versioning, allowing you to roll back to previous versions when needed.
-                </p>
-            </div>
+            
         </div>
     </div>
 </section>
@@ -71,19 +61,22 @@
     }
     .cards {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(34rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
         gap: 1.5rem;
     }
     .card {
         background: var(--dark-bg);
         padding: 2.8rem;
-        height: 34rem;
+        height: 26rem;
         border-radius: 8px;
         border: 1px solid #262626;
         text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
     }
     .card-title {
-        font-size: 2.8rem;
+        font-size: 2rem;
         font-weight: bold;
         margin-bottom: 0.5rem;
     }
