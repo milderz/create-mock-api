@@ -3,28 +3,31 @@ import './styles/Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFloppyDisk, faTableColumns, faRightToBracket, faShareNodes } from "@fortawesome/free-solid-svg-icons"
 import {
-    ClerkProvider,
+    
     SignedIn,
     SignedOut,
     SignInButton,
     UserButton,
 } from "@clerk/clerk-react";
+import { useUser } from "@clerk/clerk-react";
 
-const Header = ({ currentPath, handleModalClose }) => {
+const Header = ({ currentPath, handleModalClose,handleTemplateSave, setUserID }) => {
 
-    const PUBLISHABLE_KEY = import.meta.env.PUBLIC_CLERK_PUBLISHABLE_KEY
+    const { user } = useUser();
+    setUserID(user?.id);
+  console.log(user);
 
 
 
     return (
-        <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+        
             <header className="header" style={{ width: '90%', margin: 'auto' }}>
                 <div className="logo">
                     <a className='logo-title' href="/">API Sandbox</a>
                 </div>
                 <nav className="nav">
-                    {currentPath === "/create" ? (<Button type="button" buttonStyle="secondary" text="My APIs" icon={<FontAwesomeIcon icon={faShareNodes} />} />) : null}
-                    {currentPath === "/create" ? (<Button type="button" buttonStyle="secondary" text="Save API" icon={<FontAwesomeIcon icon={faFloppyDisk} />} />) : null}
+                    {currentPath === "/create" ? (<Button type="link" linkTarget="myapis" buttonStyle="secondary" text="My APIs" icon={<FontAwesomeIcon icon={faShareNodes} />} />) : null}
+                    {currentPath === "/create" ? (<Button type="button" buttonStyle="secondary" text="Save API" icon={<FontAwesomeIcon icon={faFloppyDisk} />} onClick={handleTemplateSave}/>) : null}
                     {currentPath === "/create" ? (<Button type="button" buttonStyle="secondary" text="Select a template" icon={<FontAwesomeIcon icon={faTableColumns} />} onClick={handleModalClose} />) : null}
 
                     <SignedIn>
@@ -35,7 +38,7 @@ const Header = ({ currentPath, handleModalClose }) => {
                     </SignedOut>
                 </nav>
             </header>
-        </ClerkProvider>
+        
     );
 };
 
