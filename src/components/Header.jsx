@@ -20,7 +20,7 @@ const Header = ({ currentPath, handleModalClose }) => {
         <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
             <header className="header" style={{ width: '90%', margin: 'auto' }}>
                 <div className="logo">
-                    <a className='logo-title' href="/">MockAPI Playground</a>
+                    <a className='logo-title' href="/">API Sandbox</a>
                 </div>
                 <nav className="nav">
                     {currentPath === "/create" ? (<Button type="button" buttonStyle="secondary" text="My APIs" icon={<FontAwesomeIcon icon={faShareNodes} />} />) : null}
