@@ -5,12 +5,15 @@ import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels';
 import Modal from './Modal';
 import templatesJSONFile from '../templates.json';
 import Header from "../components/Header";
+import { v4 as uuidv4 } from 'uuid';
+import { useUser } from "@clerk/clerk-react";
+import { ClerkProvider } from "@clerk/clerk-react";
 
 
 
 
 
-export default function App( ) {
+export default function App() {
   const [templates, setTemplates] = useState(templatesJSONFile);
   const [template, setTemplate] = useState(null);
   const [selectedTemplate, setSelectedTemplate] = useState(templatesJSONFile[0]);
@@ -19,6 +22,8 @@ export default function App( ) {
   const [aiContent, setAiContent] = useState('');
   const [aiTemplate, setAiTemplate] = useState(null);
   const [selectedTab, setSelectedTab] = useState("template");
+  const PUBLISHABLE_KEY = import.meta.env.PUBLIC_CLERK_PUBLISHABLE_KEY;
+  const [userID, setUserID] = useState(null);
 
   useEffect(() => {
     if (template) {
@@ -30,7 +35,7 @@ export default function App( ) {
     try {
       const updatedProducts = JSON.parse(value);
       setProductsData(updatedProducts);
-      
+
     } catch (error) {
       console.error("Invalid JSON:", error);
     }
@@ -43,11 +48,11 @@ export default function App( ) {
   }
 
   const handleTemplateApply = (aiData) => {
-    if(selectedTab === "template"){
-      
+    if (selectedTab === "template") {
+
       setTemplate(selectedTemplate);
-    } else if(selectedTab === "ai"){
-     
+    } else if (selectedTab === "ai") {
+
       setTemplate(aiData);
     }
     handleModalClose();
@@ -60,7 +65,7 @@ export default function App( ) {
   const handleAiContentChange = (value) => {
     setAiContent(value);
   }
- 
+
   const generateMockAPI = async (description) => {
     const response = await fetch('https://chat-gpt-mock-api-generator.onrender.com/generate-mock-api', {
       method: 'POST',
@@ -71,26 +76,64 @@ export default function App( ) {
     });
     return await response.json();
   }
-  
 
+  const handleTemplateSave = async () => {
+    try {
+      const res = await fetch('https://hzkdveydelrziyomqjbq.supabase.co/rest/v1/APIS', {
+        method: 'POST',
+        headers: {
+          'apikey': import.meta.env.PUBLIC_SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${import.meta.env.PUBLIC_SUPABASE_ANON_KEY}`,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=representation'
+        },
+        body: JSON.stringify({
+          id: uuidv4().split('-')[0], 
+          created_at: new Date().toISOString(), 
+          username: userID,
+          slug: 'test-api',
+          name: template.templateName,
+          description: template.templateDescription,
+          json_data: {template}, 
+          is_public: true
+        })
+      })
+      const text = await res.text();
+      console.log(res.status, text);
+
+      if (!res.ok) throw new Error('Error al insertar');
+
+      const data = JSON.parse(text);
+      console.log('Datos insertados:', data);
+      alert('API save successfully, go to My APIs to see it');
+      return data;
+
+
+    } catch (err) {
+      console.error('Error:', err);
+      throw err; // para que el que llame a esta función también pueda manejar el error
+    }
+
+  }
 
 
 
   return (
-    <>
-    
-    <Header handleModalClose={handleModalClose} currentPath="/create"/>
-      <Modal 
-      handleTemplateChange={handleTemplateChange} 
-      templates={templates} selectedTemplate={selectedTemplate} 
-      handleTemplateApply={handleTemplateApply} 
-      modalOpen={modalOpen}
-      handleAiContentChange={handleAiContentChange}
-      aiContent={aiContent}
-      generateMockAPI={generateMockAPI}
-      selectedTab={selectedTab}
-      setSelectedTab={setSelectedTab}
-      setAiTemplate={setAiTemplate} />
+  
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+      
+      <Header handleModalClose={handleModalClose} currentPath="/create" handleTemplateSave={handleTemplateSave} setUserID={setUserID} />
+      <Modal
+        handleTemplateChange={handleTemplateChange}
+        templates={templates} selectedTemplate={selectedTemplate}
+        handleTemplateApply={handleTemplateApply}
+        modalOpen={modalOpen}
+        handleAiContentChange={handleAiContentChange}
+        aiContent={aiContent}
+        generateMockAPI={generateMockAPI}
+        selectedTab={selectedTab}
+        setSelectedTab={setSelectedTab}
+        setAiTemplate={setAiTemplate} />
       <PanelGroup direction="horizontal" style={{ height: '550px' }}>
         <Panel defaultSize={50} minSize={20}>
           <Editor
@@ -109,7 +152,12 @@ export default function App( ) {
           <Preview template={template} />
         </Panel>
       </PanelGroup>
-    </>
+    </ClerkProvider>
+
+
+      
+
+   
 
   );
 }
