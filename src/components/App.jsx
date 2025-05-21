@@ -148,7 +148,7 @@ export default function App() {
           <svg class="OG5fOa_Icon AzW8qW_ResizeHandleThumb" viewBox="0 0 24 24" data-direction="horizontal"><path fill="currentColor" d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2m-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2m0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2m6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2m0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2m0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2"></path></svg>
         </PanelResizeHandle>
 
-        <Panel defaultSize={50} minSize={20}>
+        <Panel defaultSize={50} minSize={20} style={{ overflowY: 'scroll' }}>
           <Preview template={template} />
         </Panel>
       </PanelGroup>
